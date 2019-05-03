@@ -1,4 +1,4 @@
-from __future__ import unicode_literals
+
 
 from rest_framework_json_api.utils import format_value, inner_key_in_dict
 

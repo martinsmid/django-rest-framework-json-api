@@ -434,7 +434,7 @@ def format_drf_errors(response, context, exc):
                         for index, nested_error in enumerate(nested_errors):
                             try:
                                 identifier = '%s/%s' % (type, context['request'].data['_included'][type][index]['id'])
-                            except KeyError, IndexError:
+                            except KeyError as IndexError:
                                 identifier = '%s' % type
                             errors.extend(_format_nested_error(nested_error,
                                                                status=encoding.force_text(response.status_code),

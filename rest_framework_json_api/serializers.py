@@ -391,7 +391,7 @@ class PolymorphicModelSerializer(ModelSerializer):
         """
         Return the list of accepted types.
         """
-        return cls._poly_type_serializer_map.keys()
+        return list(cls._poly_type_serializer_map.keys())
 
     def to_representation(self, instance):
         """

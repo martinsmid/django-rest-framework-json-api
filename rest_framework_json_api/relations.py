@@ -270,7 +270,7 @@ class ResourceRelatedField(HyperlinkedMixin, PrimaryKeyRelatedField):
             ]
             includes = get_included_serializers(parent)
             for field in field_names:
-                if field in includes.keys():
+                if field in list(includes.keys()):
                     return get_resource_type_from_serializer(includes[field])
 
         return None
