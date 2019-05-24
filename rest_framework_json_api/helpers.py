@@ -12,7 +12,7 @@ class ResourceIdentifier(object):
         self.resource_type = type_
         self.resource_id = id_
 
-    def __unicode__(self):
+    def __str__(self):
         return 'Resource: id - {}, type - {}'.format(self.resource_id, self.resource_type)
 
     def get_resource(self, resource_map):
