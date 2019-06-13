@@ -1,4 +1,5 @@
 import json
+from datetime import datetime
 
 from django.test import RequestFactory
 from django.utils import timezone
@@ -15,7 +16,6 @@ from example.factories import AuthorFactory, EntryFactory
 from example.models import Author, Blog, Comment, Entry
 from example.serializers import AuthorBioSerializer, AuthorTypeSerializer, EntrySerializer
 from example.views import AuthorViewSet
-
 
 class TestRelationshipView(APITestCase):
     def setUp(self):
@@ -398,7 +398,7 @@ class TestBlogViewSet(APITestCase):
                 'attributes': {'name': self.blog.name},
                 'id': '{}'.format(self.blog.id),
                 'links': {'self': 'http://testserver/blogs/{}'.format(self.blog.id)},
-                'meta': {'copyright': 2018},
+                'meta': {'copyright': datetime.now().year},
                 'relationships': {'tags': {'data': []}},
                 'type': 'blogs'
             },
